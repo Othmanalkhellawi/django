@@ -30,5 +30,5 @@ def main_api(request, lat, lon):
 
 @require_GET
 def hello(req, name):
-    helloo = "hello " + name + " !"
+    helloo = "Hello " + name + " !"
     return JsonResponse(helloo, safe=False)

@@ -22,6 +22,6 @@ from . import views
 
 urlpatterns = [
     path('position/<lat>/<lon>/', views.main_api, name='main_api'),
-    path('position/<name>/', views.hello, name='hello')
+    path('hello/<name>/', views.hello, name='hello')
 
 ]
