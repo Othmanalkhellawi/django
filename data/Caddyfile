@@ -1,0 +1,8 @@
+api.fish-ai.no {
+    reverse_proxy api:8000
+}
+
+api2.fish-ai.no {
+    reverse_proxy api:8000
+}
+
