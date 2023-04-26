@@ -1,0 +1,8 @@
+fish-ai.no {
+    reverse_proxy fish-ai.no:8000
+}
+
+www.fish-ai.no {
+    redir https://fish-ai.no:8000/position/lat/lon {uri}
+}
+

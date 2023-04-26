@@ -1,0 +1,41 @@
+version: "3.11"
+
+services:
+ backend:
+    build: .
+    restart: unless-stopped
+    expose:
+      - 8000
+ caddy:
+  image: caddy:2.6.4
+  restart: unless-stopped
+  ports:
+   - "80:80"
+   - "443:443"
+   - "443:443/udp"
+  volumes:
+   - $PWD/Caddyfile:/ect/caddy/Caddyfile
+   - $PWD/site:/srv
+   - caddy_data:/data
+   - caddy_config:/config
+
+volumes:
+ caddy_data:
+ caddy_config:
+
+#services:
+#  caddy:
+#    image: caddy:2
+#    restart: unless-stopped
+#    ports:
+#      - "80:80"
+#      - "443:443"
+#    volumes:
+#      - ./data/data:/data
+#      - ./data/config:/config
+#      - ./data/Caddyfile:/etc/caddy/Caddyfile
+#
+networks:
+  default:
+    external: true
+    name: public

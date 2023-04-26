@@ -26,6 +26,8 @@ SECRET_KEY = 'django-insecure-2va&)kkrc1eey@65%b9c4y^x&#hna1*ln&dvgtr8ak39a&bte3
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'fish-ai.no'
+    'www.fish-ai.no'
 
 ]
 
